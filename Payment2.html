@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Payment Form</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        /* General body styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        /* Payment form container */
+        .payment-container {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            width: 100%;
+            max-width: 380px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        /* Header styling */
+        .payment-container h2 {
+            margin-bottom: 20px;
+            color: #004d40;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* Form group styling */
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        /* Input labels */
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #00796b;
+        }
+
+        /* Input fields */
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #b2dfdb;
+            border-radius: 6px;
+            font-size: 14px;
+            background: #e0f2f1;
+            box-sizing: border-box;
+        }
+
+        /* Input focus styling */
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #004d40;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 77, 64, 0.5);
+        }
+
+        /* Payment button styling */
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin-top: 10px;
+        }
+
+        /* Hover effect on button */
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #5b0db6, #1b60d1);
+        }
+
+        /* Lock icon below button */
+        .lock-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 8px;
+            font-size: 14px;
+            color: #00796b;
+        }
+
+        .lock-icon i {
+            margin-right: 5px;
+            font-size: 16px;
+            color: #00796b;
+        }
+
+        /* Credit card logos styling */
+        .credit-card-logos {
+            margin: 15px 0;
+            display: flex;
+            justify-content: space-around;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .credit-card-logos img {
+            max-width: 50px;
+            height: auto;
+        }
+
+        /* Footer note styling */
+        .footer-note {
+            font-size: 12px;
+            color: #999;
+            margin-top: 15px;
+        }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .payment-container {
+                padding: 15px;
+                max-width: 90%;
+            }
+
+            .form-group label {
+                font-size: 14px;
+            }
+
+            .form-group input,
+            .form-group select {
+                font-size: 14px;
+            }
+
+            .submit-btn {
+                font-size: 14px;
+                padding: 12px;
+            }
+
+            .credit-card-logos img {
+                max-width: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .payment-container {
+                padding: 10px;
+                max-width: 95%;
+            }
+
+            .form-group label {
+                font-size: 13px;
+            }
+
+            .form-group input,
+            .form-group select {
+                font-size: 13px;
+                padding: 10px;
+            }
+
+            .submit-btn {
+                font-size: 13px;
+                padding: 10px;
+            }
+
+            .credit-card-logos img {
+                max-width: 35px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="payment-container">
+        <h2>Secure Payment</h2>
+        <p style="color: #666;">Complete your payment securely with confidence.</p>
+         <!-- Credit Card Logos -->
+        <div class="credit-card-logos">
+            <img src="https://img.icons8.com/?size=96&id=13608&format=png" alt="Visa">
+            <img src="https://img.icons8.com/?size=96&id=13610&format=png" alt="MasterCard">
+            <img src="https://img.icons8.com/?size=96&id=20798&format=png" alt="Discover">
+            <img src="https://img.icons8.com/?size=96&id=13607&format=png" alt="American Express">
+			<img src="https://img.icons8.com/?size=96&id=13611&format=png" alt="PayPal">
+            <img src="https://img.icons8.com/?size=96&id=18980&format=png" alt="Stripe">
+        </div>
+
+        
+        <form>
+            <div class="form-group">
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" placeholder="ORKO">
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="example@domain.com">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="+1 234 567 890">
+            </div>
+            <div class="form-group">
+                <label for="cardnumber">Credit Card Number</label>
+                <input type="text" id="cardnumber" placeholder="1234 5678 9012 3456">
+            </div>
+            <div class="form-group">
+                <label for="expiry">Expiry Date</label>
+                <input type="month" id="expiry" name="expiry_date" required>
+            </div>
+            <div class="form-group">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" placeholder="123">
+            </div>
+            <div class="form-group">
+                <label for="amount">Amount to Pay</label>
+                <input type="text" id="amount" placeholder="$">
+            </div>
+            <button type="submit" class="submit-btn">Pay Now</button>
+            <div class="lock-icon">
+                <i class="fa fa-lock"></i> Secure Payment
+            </div>
+        </form>
+        <div class="footer-note">Your payment details are safe and secure.</div>
+    </div>
+</body>
+</html>
